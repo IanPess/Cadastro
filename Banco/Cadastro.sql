@@ -12,6 +12,8 @@ CREATE TABLE Cidade (
 CREATE TABLE Cliente (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(100),
+    senha VARCHAR(100),
+    ativo bool,
     cidade_id INT,
     FOREIGN KEY (cidade_id) REFERENCES Cidade(id)
 );
@@ -25,12 +27,12 @@ INSERT INTO Cidade (nome, estado) VALUES
 
 SELECT * FROM Cidade WHERE estado = 'SP';
 
-INSERT INTO Cliente (nome, cidade_id) VALUES
-('Ana Maria', 1),     
-('Cleiton Souza', 2),    
-('Valdemir Silva', 3),
-('Jacinto Pereira', 1),    
-('Octávio Santos', 5);   
+INSERT INTO Cliente (nome, cidade_id, senha) VALUES
+('Ana Maria', 1, '123'),     
+('Cleiton Souza', 2 ,'263'),    
+('Valdemir Silva', 3, '371'),
+('Jacinto Pereira', 1, '284'),    
+('Octávio Santos', 5, '128');   
 
 SELECT * FROM Cliente WHERE cidade_id = 1;
 
