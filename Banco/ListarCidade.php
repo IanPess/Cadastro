@@ -17,9 +17,11 @@
         <h1>Consulta de Cidade</h1>
         <table align="center" border="1" width="500">
             <tr>
-                <th>Código</th>
+                <th>Codigo</th>
                 <th>Nome</th>
-                <th>Estado</th>
+                <th>Código</th>
+                <th>Alterar</th>
+                <th>Deletar</th>
             </tr>
             <?php
             while($row = mysqli_fetch_array($result)) {
@@ -27,6 +29,8 @@
                 echo "<td>".$row['id']."</td>";
                 echo "<td>".$row['nome']."</td>";
                 echo "<td>".$row['estado']."</td>";
+                echo "<td><a href='alteraCidade.php?id=".$row['id']."'>Alterar</a></td>";
+                echo "<td><a href='deletarCidade.php?id=".$row['id']."'>Deletar</a></td>";
                 echo "</tr>";
             }
             ?>
